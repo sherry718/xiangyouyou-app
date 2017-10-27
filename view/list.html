@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>首页</title>
+		<link rel="stylesheet" href="https://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+		<link rel="stylesheet" href="/app/css/style.css">
+	</head>
+
+	<body>
+		<div class="page-group">
+			<div class="page page-current">
+				<nav class="bar bar-tab">
+					<a class="tab-item active" href="#">
+						<span class="icon icon-sale"></span>
+						<span class="tab-label">今日促销</span>
+					</a>
+					<a class="tab-item" href="#">
+						<span class="icon icon-nine"></span>
+						<span class="tab-label">9块9</span>
+					</a>
+					<a class="tab-item" href="#">
+						<span class="icon icon-money"></span>
+						<span class="tab-label">省钱工具</span>
+					</a>
+					<a class="tab-item" href="#">
+						<span class="icon icon-welfare"></span>
+						<span class="tab-label">福利社</span>
+					</a>
+					<a class="tab-item external" href="user/index.html">
+						<span class="icon icon-my"></span>
+						<span class="tab-label">我</span>
+					</a>
+				</nav>
+
+				<div class="content">
+					<div class="search-container">
+						<form action="" class="search">
+							<span class="icon icon-search"></span>
+							<input type="text" class="search__text" placeholder="搜淘宝宝贝 拿返利优惠劵">
+						</form>
+						<a href="#" class="cart">
+							<span class="icon icon-cart"></span>
+						</a>
+					</div>
+					<div class="nav-container" id="nav-container">
+
+						<div class="navbar">
+							<nav class="nav" id="nav">
+								<a href="/app/index.html" class="active">精选</a>
+								<a href="/app/view/list.html">上新</a>
+								<a href="/app/view/list.html">服装</a>
+								<a href="/app/view/list.html">日用品</a>
+								<a href="/app/view/list.html">食品</a>
+								<a href="/app/view/list.html">母婴</a>
+								<a href="#" class="up" id="close-nav"><span class="icon icon-up"></span></a>
+							</nav>
+						</div>
+						<a href="#" class="btn-menu">
+							<span class="icon icon-menu"></span>分类
+						</a>
+					</div>
+					<div class="hot-product-container">
+						<h2 class="hot-product-title"><i class="icon icon-hot"></i>每天早10点·晚8点上新</h2>
+						<div class="list-product">
+							<div class="item">
+								<div class="item__left">
+									<img src="src/images/t_34.jpg" alt="">
+								</div>
+								<div class="item__body">
+									<div class="item__header">
+										<h2 class="tit">植物本色抽纸家庭装24包</h2>
+									</div>
+									<div class="item__infor">
+										<strong class="price">￥<span>29</span>.9</strong>
+										<div class="sale"><span>44.9</span>领劵减15</div>
+									</div>
+									<div class="item__footer">
+										<div class="hotbar">
+											<i class="icon icon-hot2"></i>
+											<span class="text">热度6°C</span>
+											<i class="value"></i>
+										</div>
+										<a href="#" class="btn btn-red">去天猫 <span class="icon icon-right"></span></a>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="item__left">
+									<img src="src/images/t_34.jpg" alt="">
+								</div>
+								<div class="item__body">
+									<div class="item__header">
+										<h2 class="tit">植物本色抽纸家庭装24包植物本色抽纸家庭装24包植物本色抽纸家庭装24包</h2>
+									</div>
+									<div class="item__infor">
+										<strong class="price">￥<span>29</span>.9</strong>
+										<div class="sale"><span>44.9</span>领劵减15</div>
+									</div>
+									<div class="item__footer">
+										<div class="hotbar">
+											<i class="icon icon-hot2"></i>
+											<span class="text">热度6°C</span>
+											<i class="value"></i>
+										</div>
+										<a href="#" class="btn btn-red">去天猫 <span class="icon icon-right"></span></a>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="item__left">
+									<img src="src/images/t_34.jpg" alt="">
+								</div>
+								<div class="item__body">
+									<div class="item__header">
+										<h2 class="tit">植物本色抽纸家庭装24包植物本色抽纸家庭装24包植物本色抽纸家庭装24包</h2>
+									</div>
+									<div class="item__infor">
+										<strong class="price"><span>1元礼物</span></strong>
+									</div>
+									<div class="item__footer">
+										<div class="hotbar">
+											<i class="icon icon-hot2"></i>
+											<span class="text">热度6°C</span>
+											<i class="value"></i>
+										</div>
+										<a href="#" class="btn btn-red btn-sm">去抢购 <span class="icon icon-right"></span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type='text/javascript' src='https://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='https://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+	<script>
+		$.init();
+		$.config = {
+			router: false
+		}
+		$('#open-nav').on('click', function() {
+			$('#nav,#nav-container').addClass('open');
+			$(this).hide();
+			$('#close-nav').show();
+		});
+		$('#close-nav').on('click', function() {
+			$(this).hide();
+			$('#nav,#nav-container').removeClass('open');
+			$('#open-nav').show();
+		})
+	</script>
+
+</html>

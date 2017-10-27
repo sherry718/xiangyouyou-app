@@ -1,0 +1,101 @@
+.icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.icon-m1 {
+  background-image: url(../images/m_01.jpg);
+}
+.icon-m2 {
+  background-image: url(../images/m_02.jpg);
+}
+.icon-m3 {
+  background-image: url(../images/m_03.jpg);
+}
+.icon-m4 {
+  background-image: url(../images/m_04.jpg);
+}
+.icon-m5 {
+  background-image: url(../images/m_05.jpg);
+}
+.icon-hot2 {
+  background-image: url(../images/t_37.png);
+  background-position: left bottom;
+}
+.user-menu .iconfont {
+  font-size: 1.2rem;
+}
+.user-menu .icon-dingdan {
+  color: #918af5;
+  font-size: 1.3rem;
+}
+.user-menu .icon-shoucang {
+  color: #f3ac44;
+}
+.user-menu .icon-hongbao {
+  color: #e76b66;
+}
+.user-menu .icon-qian {
+  color: #f3ac44;
+}
+.user-menu .icon-kefu {
+  color: #6ecb8d;
+}
+.user-menu .icon-gougou {
+  color: #77aef6;
+}
+.user-menu .icon-huafei {
+  color: #4ba7f8;
+}
+.user-menu .icon-xinyongqia {
+  font-size: 1.1rem;
+  color: #ef8532;
+}
+.user-menu .icon-tixian {
+  color: #91c13b;
+}
+.user-menu .icon-tb {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url(../images/icon-tb.png);
+}
+.user-menu .icon-q {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url(../images/icon-q.png);
+}
+.bar-tab .icon {
+  padding: 0;
+  width: 1.2rem;
+  background-position: center;
+}
+.bar-tab .icon-sale {
+  background-image: url(../images/t_m4.png);
+}
+.bar-tab .icon-nine {
+  background-image: url(../images/t_m2.png);
+}
+.bar-tab .icon-money {
+  background-image: url(../images/t_m10.png);
+}
+.bar-tab .icon-welfare {
+  background-image: url(../images/t_m6.png);
+}
+.bar-tab .icon-my {
+  background-image: url(../images/t_m8.png);
+}
+.bar-tab .tab-item.active .icon-sale {
+  background-image: url(../images/t_m3.png);
+}
+.bar-tab .tab-item.active .icon-nine {
+  background-image: url(../images/t_m1.png);
+}
+.bar-tab .tab-item.active .icon-money {
+  background-image: url(../images/t_m9.png);
+}
+.bar-tab .tab-item.active .icon-welfare {
+  background-image: url(../images/t_m5.png);
+}
+.bar-tab .tab-item.active .icon-my {
+  background-image: url(../images/t_m7.png);
+}

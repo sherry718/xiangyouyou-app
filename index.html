@@ -1,19 +1,230 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title></title>
-    <script type="text/javascript">
-    	
-   		document.addEventListener('plusready', function(){
-   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
-   			
-   		});
-   		
-    </script>
-</head>
-<body>
-	
-</body>
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>首页</title>
+		<link rel="stylesheet" href="https://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+		<div class="page-group">
+			<div class="page page-current">
+				<nav class="bar bar-tab">
+					<a class="tab-item active external" href="index.html">
+						<span class="icon icon-sale"></span>
+						<span class="tab-label">今日促销</span>
+					</a>
+					<a class="tab-item external" href="#">
+						<span class="icon icon-nine"></span>
+						<span class="tab-label">9块9</span>
+					</a>
+					<a class="tab-item external" href="#">
+						<span class="icon icon-money"></span>
+						<span class="tab-label">省钱工具</span>
+					</a>
+					<a class="tab-item external" href="#">
+						<span class="icon icon-welfare"></span>
+						<span class="tab-label">福利社</span>
+					</a>
+					<a class="tab-item external" href="user.html">
+						<span class="icon icon-my"></span>
+						<span class="tab-label">我</span>
+					</a>
+				</nav>
+
+				<div class="content">
+					<div class="search-container">
+						<form action="" class="search">
+							<span class="icon icon-search"></span>
+							<input type="text" class="search__text" placeholder="搜淘宝宝贝 拿返利优惠劵">
+						</form>
+						<a href="#" class="cart">
+							<span class="iconfont icon-cart"></span>
+						</a>
+					</div>
+					<div class="nav-container" id="nav-container">
+
+						<div class="navbar">
+							<nav class="nav" id="nav">
+								<a href="#" class="active">精选</a>
+								<a href="#" >上新</a>
+								<a href="#">服装</a>
+								<a href="#">日用品</a>
+								<a href="#">食品</a>
+								<a href="#">母婴</a>
+
+								<a href="#" class="up" id="close-nav"><span class="icon icon-up"></span></a>
+							</nav>
+						</div>
+						<a href="#" class="btn-menu">
+							<span class="icon icon-menu"></span>分类
+						</a>
+					</div>
+					<div class="menu-container">
+						<div class="menu">
+							<a href="#" class="item"><span class="icon icon-m1"></span>淘宝返还</a>
+							<a href="#" class="item"><span class="icon icon-m2"></span>京东返还</a>
+							<a href="#" class="item"><span class="icon icon-m3"></span>搜淘宝劵</a>
+							<a href="#" class="item"><span class="icon icon-m4"></span>邀请有奖</a>
+							<a href="#" class="item"><span class="icon icon-m5"></span>签到领钱</a>
+						</div>
+					</div>
+					<div class="newuserpackage-container">
+						<div class="block-title">
+							<img src="img/t_19.jpg" alt="新人专享礼包">
+						</div>
+						<div class="sale-block">
+							<a class="item">
+								<img src="img/t_25.jpg" alt="" class="pic">
+								<div class="infor">
+									<h2>微信红包</h2>
+									<p>签到领钱 可提现</p>
+								</div>
+							</a>
+							<a class="item">
+								<img src="img/t_22.jpg" alt="" class="pic">
+								<div class="infor">
+									<h2>0元包邮</h2>
+									<p>新手专享 0元起</p>
+								</div>
+							</a>
+						</div>
+						<div class="btn-block">
+							<a class="btn btn-yellow">
+								<strong>立即领取</strong>
+								<p>103234人已领取</p>
+							</a>
+						</div>
+					</div>
+					<div class="hot-product-container">
+						<h2 class="hot-product-title"><i class="iconfont icon-hot"></i>每天早10点·晚8点上新</h2>
+						<div class="list-product">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type='text/javascript' src='https://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+	<script>
+		$.config = {
+			//        router:false
+		}
+	</script>
+	<script type='text/javascript' src='https://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+	<script>
+		$.init();
+		$('#open-nav').on('click', function() {
+			$('#nav,#nav-container').addClass('open');
+			$(this).hide();
+			$('#close-nav').show();
+		});
+		$('#close-nav').on('click', function() {
+			$(this).hide();
+			$('#nav,#nav-container').removeClass('open');
+			$('#open-nav').show();
+		})
+
+		// 加载flag
+		var loading = false;
+		// 每次加载添加多少条目
+		var itemsPerLoad = 20;
+
+		function addItems(number, lastIndex) {
+			$.get('http://192.168.1.61:83/api/list', function(data) {
+				console.log(data);
+				// 生成新条目的HTML
+				var html = '';
+				var list = data.list;
+				console.log(list);
+				if(list.length > 0) {
+					for(var i = 0; i < list.length; i++) {
+
+						html += '<div class="item">' +
+							'<div class="item__left" id="goto_taobao">' +
+							'<a href="#"    data-url="' + list[i].item_url + '"> <img class="goto_taobao" src="' + list[i].pict_url + '" alt=""></a>' +
+							'</div>' +
+							'<div class="item__body">' +
+							'<div class="item__header">' +
+							'<h2 class="tit">' + list[i].title + '</h2>' +
+							'</div>' +
+							'<div class="item__infor">' +
+							'<strong class="price">￥<span>29</span>.9</strong>' +
+							'<div class="sale"><span class="lab">领卷</span><span class="text">满400减100</span></div>' +
+							'</div>' +
+							'<div class="item__footer">' +
+							'<div class="hotbar">' +
+							'<i class="icon icon-hot2"></i>' +
+							'<span class="text">热度6°C</span>' +
+							'<i class="value"></i>' +
+							'</div>' +
+							'<a href="#" class="btn btn-red">去天猫 <span class="icon icon-right"></span></a>' +
+							'</div>' +
+							'</div>' +
+							'</div>'
+					}
+					// 添加新条目
+					$('.list-product').append(html);
+				} else {
+					// 加载完毕，则注销无限加载事件，以防不必要的加载
+					$.detachInfiniteScroll($('.infinite-scroll'));
+					// 删除加载提示符
+					$('.infinite-scroll-preloader').remove();
+					return;
+				}
+
+			})
+
+		}
+		//预先加载20条
+		addItems(itemsPerLoad, 0);
+
+		// 上次加载的序号
+
+		var lastIndex = 20;
+
+		// 注册'infinite'事件处理函数
+		$(document).on('infinite', '.infinite-scroll-bottom', function() {
+
+			// 如果正在加载，则退出
+			if(loading) return;
+
+			// 设置flag
+			loading = true;
+
+			// 重置加载flag
+			loading = false;
+
+			// 添加新条目
+			addItems(itemsPerLoad, lastIndex);
+
+			//容器发生改变,如果是js滚动，需要刷新滚动
+			$.refreshScroller();
+
+		});
+	</script>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+
+		mui.init();
+		mui.plusReady(function() {
+			/**
+			 * 以百度为例
+			 */
+
+			document.getElementById("goto_taobao").addEventListener("tap", function() {
+				
+				mui.openWindow({
+					url: "view/item/detail.html",
+					id: "target"
+				});
+			});
+		});
+	</script>
+
 </html>
